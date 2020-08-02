@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.createNewMemberController">
+
+   <fx:define>
+      <ToggleGroup fx:id="toggleGroup" />
+   </fx:define>
+
+   <children>
+      <VBox alignment="CENTER_LEFT" layoutX="64.0" layoutY="17.0" prefHeight="355.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <Label text="First name" />
+            <TextField fx:id="tfFirstName" />
+            <Label text="Last name" />
+            <TextField fx:id="tfLastName" />
+            <Label text="Password" />
+            <TextField fx:id="tfPassword" />
+            <Label text="Email address" />
+            <TextField fx:id="tfEmail" />
+            <Label text="Birthday" />
+            <DatePicker fx:id="tfBirthday" prefHeight="27.0" prefWidth="204.0" />
+            <Label text="Gender" />
+            <HBox prefHeight="38.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <RadioButton fx:id="rbtnMale" alignment="TOP_LEFT" mnemonicParsing="false" text="Male">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="toggleGroup" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="rbtnFemale" mnemonicParsing="false" text="Female" toggleGroup="$toggleGroup" />
+               </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
+            <Button fx:id="btnSignUp" mnemonicParsing="false" onMouseClicked="#signUp" prefWidth="200.0" text="Sign up" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="345.0" layoutY="30.0" prefHeight="319.0" prefWidth="216.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" prefWidth="200.0" text="Sign up with Facebook" />
+            <Button fx:id="btnBackHome" mnemonicParsing="false" onMouseClicked="#backHome" prefWidth="200.0" text="Already have an account" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
